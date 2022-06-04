@@ -14,4 +14,4 @@ jobs:
           path: .
         
       - name: rebuild & deploy
-        run: docker-compose up web -d --build
+        run: docker-compose -d --build up web 
