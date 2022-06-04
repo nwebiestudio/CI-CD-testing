@@ -1,0 +1,17 @@
+name: Deploy full
+
+on:
+  workflow_dispatch:
+  
+jobs: 
+  build:
+    name: image build
+    runs-on: self-hosted
+    steps:
+      - name: checking for actual
+        uses: actions/checkout@v2.4.0
+        with:
+          path: .
+        
+      - name: rebuild & deploy
+        run: docker-compose up web -d --build
