@@ -14,4 +14,4 @@ jobs:
           path: .
         
       - name: deploy
-        run: docker-compose up -d
+        run: docker-compose -d up 
