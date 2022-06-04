@@ -1,4 +1,4 @@
-name: Deploy full
+name: rebuild web.
 
 on:
   workflow_dispatch:
