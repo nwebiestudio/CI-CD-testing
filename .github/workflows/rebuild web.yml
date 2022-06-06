@@ -23,5 +23,5 @@ jobs:
         run: cd /home/
       
       - name: ls
-        run: ls
+        run: ls /home/
 
