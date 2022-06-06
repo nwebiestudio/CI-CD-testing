@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: checking for actual
-        uses: actions/checkout@v2.4.0
+        uses: actions/checkout@v2.4.2
         with:
           path: .
         
