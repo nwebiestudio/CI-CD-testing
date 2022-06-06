@@ -15,3 +15,6 @@ jobs:
         
       - name: deploy
         run: docker-compose -d up 
+
+      - name: pwd
+        run: pwd
