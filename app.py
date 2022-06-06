@@ -6,6 +6,7 @@ from flask import Flask
 
 app = Flask(__name__)
 cache = redis.Redis(host='redis', port=6379)
+someshit = open('nothing').read
 
 def get_hit_count():
     retries = 5
@@ -21,4 +22,4 @@ def get_hit_count():
 @app.route('/')
 def hello():
     count = get_hit_count()
-    return 'Hello World! I\'m wer have been seen {} times.\n'.format(count) + os.environ.get('SECRET')
+    return 'Hello World! I\'m have been seen {} times.\n'.format(count) + os.environ.get('SECRET') + someshit

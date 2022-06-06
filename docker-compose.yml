@@ -7,5 +7,8 @@ services:
     build: .
     ports:
       - "8000:5000"
+    volumes:
+      - /home/denis/someshit:.
+
   redis:
     image: "redis:alpine"
