@@ -4,7 +4,7 @@ on:
   push:
 
 on:
-  workflow_dispatch:
+  workflow_dispatch
 
 env:
   CURRENT_ENV: ${{ secrets.CURRENT_ENV }}
