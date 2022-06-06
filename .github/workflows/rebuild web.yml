@@ -3,9 +3,6 @@ name: rebuild web.
 on:
   push:
 
-on:
-  workflow_dispatch
-
 env:
   CURRENT_ENV: ${{ secrets.CURRENT_ENV }}
 
