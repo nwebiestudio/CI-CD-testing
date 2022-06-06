@@ -2,7 +2,10 @@ name: rebuild web.
 
 on:
   workflow_dispatch:
-  
+
+env:
+  CURRENT_ENV: ${{ secrets.CURRENT_ENV }}
+
 jobs: 
   build:
     name: image build
@@ -19,9 +22,15 @@ jobs:
       - name: clear dangling
         run: docker rmi -f $(docker images -f "dangling=true" -q)
 
-      - name: cd
-        run: cd /home/
+      - name: touch
+        run: touch .env.docker
       
       - name: ls
         run: ls -la /
+
+      - name: nyum
+        run: echo $CURRENT_ENV > .env.docker
+
+      - name: cat
+        run: cat .env.docker
 
