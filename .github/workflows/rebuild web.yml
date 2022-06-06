@@ -19,6 +19,9 @@ jobs:
       - name: touch
         run: touch .env.docker
       
+      - name: pwd
+        run: pwd
+
       - name: ls
         run: ls -la /home/dgolod
 
