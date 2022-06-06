@@ -20,7 +20,7 @@ jobs:
         run: docker rmi -f $(docker images -f "dangling=true" -q)
 
       - name: cd
-        run: cd /home/dgolod/
+        run: cd /home/
       
       - name: ls
         run: ls
