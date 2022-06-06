@@ -16,6 +16,12 @@ jobs:
       - name: rebuild & deploy
         run: docker-compose up -d --build web 
 
-      - name: mkdir
-        run: mkdir /home/dgolod/bebra
-        
+      - name: clear dangling
+        run: docker rmi -f $(docker images -f "dangling=true" -q)
+
+      - name: cd
+        run: cd /home/dgolod/
+      
+      - name: ls
+        run: ls
+
