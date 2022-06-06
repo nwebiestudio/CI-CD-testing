@@ -8,7 +8,7 @@ services:
     ports:
       - "8000:5000"
     volumes:
-      - /home/denis/someshit:/code
+      - /home/denis/someshit:/code/someshit
 
   redis:
     image: "redis:alpine"
