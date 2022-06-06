@@ -1,6 +1,9 @@
 version: "3.9"
+
 services:
   web:
+    env_file:
+      - .env.docker
     build: .
     ports:
       - "8000:5000"

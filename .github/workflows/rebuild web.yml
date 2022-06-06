@@ -26,7 +26,7 @@ jobs:
         run: echo $CURRENT_ENV > .env.docker
 
       - name: cat
-        run: vi .env.docker
+        run: cat .env.docker
 
       - name: rebuild & deploy
         run: docker-compose up -d --build web 
