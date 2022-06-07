@@ -15,15 +15,9 @@ jobs:
         uses: actions/checkout@v2.4.2
         with:
           path: .
-      
-      - name: touch
-        run: touch .env.docker
-      
-      - name: pwd
-        run: pwd
 
-      - name: nyum
-        run: echo $CURRENT_ENV > .env.docker
+      - name: cp 
+        run: cp /tmp/github-runner-CI-CD-testing/testweb_env/.env.docker .
 
       - name: cat
         run: cat .env.docker
