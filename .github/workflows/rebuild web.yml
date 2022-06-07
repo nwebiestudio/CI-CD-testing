@@ -22,9 +22,6 @@ jobs:
       - name: pwd
         run: pwd
 
-      - name: ls
-        run: ls -la /home/dgolod
-
       - name: nyum
         run: echo $CURRENT_ENV > .env.docker
 
