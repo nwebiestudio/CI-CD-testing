@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  CURRENT_ENV: ${{ secrets.CURRENT_ENV }}
+  previous_container: null
 
 jobs: 
   build:
