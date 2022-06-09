@@ -29,9 +29,10 @@ jobs:
         run: docker ps -f "name=ci-cd-testing_web_1" --format {{.Names}}|sed 's/ci-cd-testing_web_1/prev_up=true/' >> $GITHUB_ENV
 
       - name: echo
-        run : echo ${{env.prev_up}}
+        run : |
+         if ["${{env.prev_up}}" == "true"]; then
+            echo WOOHOO
+         fi
 
-      - name: Stopping and removing previous container
-        if: ${{env.prev_up==true}}
-        run: docker container stop eatlas3
+
 
