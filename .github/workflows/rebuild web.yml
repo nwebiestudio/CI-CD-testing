@@ -32,6 +32,6 @@ jobs:
         run: docker ps --format '{{.Names}}' --filter "name=eatlas3" >> $previous_container
 
       - name: Stopping and removing previous container
-        if: ${{ $PREVIOUS_CONTAINER == eatlas3 }}
+        if: $PREVIOUS_CONTAINER == eatlas3
         run: docker container stop eatlas3
 
