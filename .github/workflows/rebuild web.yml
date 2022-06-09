@@ -16,6 +16,12 @@ jobs:
         with:
           path: .
 
+      - name: cp 
+        run: cp /tmp/testweb_env/.env.docker .
+
+      - name: cat
+        run: cat .env.docker
+
       - name: rebuild & deploy
         run: docker-compose up -d --build web 
 
