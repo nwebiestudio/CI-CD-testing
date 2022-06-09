@@ -32,6 +32,6 @@ jobs:
         run: docker ps -f "name=eatlas3" --format {{.Names}}|sed 's/eatlas3/true/' >> $PREVIOUS_CONTAINER
 
       - name: Stopping and removing previous container
-        if: {{env.PREVIOUS_CONTAINER == true}}
+        if: ${{env.PREVIOUS_CONTAINER == true}}
         run: docker container stop eatlas3
 
