@@ -29,10 +29,7 @@ jobs:
         run: docker ps -f "name=ci-cd-testing_web_1" --format {{.Names}}|sed 's/ci-cd-testing_web_1/prev_up=true/' >> $GITHUB_ENV
 
       - name: echo
-        run : |
-         if ["${{env.prev_up}}" == "true"]; then
-            echo WOOHOO
-         fi
+        run : if ["${{env.prev_up}}" == "true"]; then echo WOOHOO; fi
 
 
 
