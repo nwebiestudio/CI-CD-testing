@@ -32,6 +32,6 @@ jobs:
         run : echo ${{env.prev_up}}
 
       - name: Stopping and removing previous container
-        if: ${{env.prev_up == true}}
+        if: ${{env.prev_up==true}}
         run: docker container stop eatlas3
 
