@@ -28,7 +28,7 @@ jobs:
       - name: Checking if previous container is up
         env:
           PREVIOUS_CONTAINER: false
-        run: docker ps -f "name=ci-cd-testing_web_1" --format {{.Names}}|sed 's/ci-cd-testing_web_1/true/' >> $PREVIOUS_CONTAINER
+        run: docker ps #-f "name=ci-cd-testing_web_1" --format {{.Names}}|sed 's/ci-cd-testing_web_1/true/' >> $PREVIOUS_CONTAINER
 
       - name: Stopping and removing previous container
         if: ${{env.PREVIOUS_CONTAINER == true}}
