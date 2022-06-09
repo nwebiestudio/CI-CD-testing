@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  PREVIOUS_CONTAINER: null
+  PREVIOUS_CONTAINER: false
 
 jobs: 
   build:
@@ -29,9 +29,9 @@ jobs:
         run: docker rmi -f $(docker images -f "dangling=true" -q)
 
       - name: Checking if previous container is up
-        run: docker ps --format '{{.Names}}' --filter "name=eatlas3" >> $previous_container
+        run: docker ps -f "name=eatlas3" --format {{.Names}}|sed 's/eatlas3/true/' >> $PREVIOUS_CONTAINER
 
       - name: Stopping and removing previous container
-        if: $PREVIOUS_CONTAINER == eatlas3
+        if: {{env.PREVIOUS_CONTAINER == true}}
         run: docker container stop eatlas3
 
