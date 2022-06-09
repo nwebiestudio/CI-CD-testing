@@ -28,3 +28,10 @@ jobs:
       - name: clear dangling
         run: docker rmi -f $(docker images -f "dangling=true" -q)
 
+      - name: Checking if previous container is up
+        run: docker ps --format '{{.Names}}' --filter "name=eatlas3" >> $previous_container
+
+      - name: Stopping and removing previous container
+        if: ${{ $previous_container == eatlas3 }}
+        run: docker container stop eatlas3
+
