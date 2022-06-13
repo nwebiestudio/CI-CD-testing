@@ -17,6 +17,6 @@ jobs:
         run: pwd
         
       - name: deploy
-        run: docker-compose -d up 
+        run: docker-compose up -d
 
       
