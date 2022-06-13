@@ -15,6 +15,9 @@ jobs:
           
       - name: pwd
         run: pwd
+      
+      - name: cp env
+        run: cp ../_env/.env.docker .
         
       - name: deploy
         run: docker-compose up -d
