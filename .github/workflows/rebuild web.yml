@@ -1,7 +1,7 @@
 name: rebuild web.
 
 on:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs: 
   build:
