@@ -1,7 +1,7 @@
 name: rebuild web.
 
 on:
-  push:
+  workflow-dispatch:
 
 jobs: 
   build:
