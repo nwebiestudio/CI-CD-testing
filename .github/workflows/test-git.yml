@@ -1,0 +1,17 @@
+name: rebuild web.
+
+on:
+  push:
+
+jobs: 
+  build:
+    name: image build
+    runs-on: self-hosted
+    steps:
+      - name: checking for actual
+        uses: actions/checkout@v2.4.2
+        with:
+          path: .
+
+      - name: branch
+        run: git branch
