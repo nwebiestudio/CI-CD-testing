@@ -15,3 +15,6 @@ jobs:
 
       - name: branch
         run: git branch
+      
+      - name: remote
+        run: git remote
